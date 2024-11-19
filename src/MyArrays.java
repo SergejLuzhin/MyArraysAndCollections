@@ -143,4 +143,26 @@ public class MyArrays {
         return -(low + 1); //key not found
     }
 
+    static int binarySearch(short[] a, short key){
+        return binarySearch(a, 0, a.length, key);
+    }
+
+    static int binarySearch(short[] a, int fromIndex, int toIndex, short key){
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            short midVal = a[mid];
+
+            if (key > midVal)
+                low = ++mid;
+            else if (key < midVal)
+                high = --mid;
+            else
+                return mid; //key found
+        }
+        return -(low + 1); //key not found
+    }
+
 }

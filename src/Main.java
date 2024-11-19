@@ -68,5 +68,16 @@ public class Main {
         } else {
             System.out.printf("Element %d was not found. Could be insert at index %d", longKey, -(result + 1));
         }
+
+        // Short binary search
+        short[] shortArray = new short[]{0, 1, 3, 5, 22, 54, 89};
+        short shortKey = 1;
+        result = MyArrays.binarySearch(shortArray, shortKey);
+        System.out.println("\n\n7. Testing short binary search.\nArray: " + Arrays.toString(shortArray) + "\nLooking for: " + shortKey);
+        if (result >= 0) {
+            System.out.printf("Element %d was found at index %d", shortKey, result);
+        } else {
+            System.out.printf("Element %d was not found. Could be insert at index %d", shortKey, -(result + 1));
+        }
     }
 }
