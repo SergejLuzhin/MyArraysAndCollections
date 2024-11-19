@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -87,11 +88,48 @@ public class Main {
         Person p4 = new Person("Jain", 27);
         Person p5 = new Person("Boris", 21);
         Person keyPerson = new Person("Sergej", 22);
-
         Person[] personArray = new Person[]{p2, p5, p1, p3, p4};
         result = MyArrays.binarySearch(personArray, keyPerson, new PersonComparator());
         System.out.printf("\n\n8. Testing generic binary search.\nArray: [");
-        for (Person person : personArray){
+        for (Person person : personArray) {
+            System.out.printf("%s age %d, ", person.getName(), person.getAge());
+        }
+        System.out.printf("]\n");
+        System.out.printf("Looking for: %s, %d\n", keyPerson.getName(), keyPerson.getAge());
+        if (result >= 0) {
+            System.out.printf("Person named %s with age %d was found at index %d", keyPerson.getName(), keyPerson.getAge(), result);
+        } else {
+            System.out.printf("Person named %s with age %d was not found. Could be insert at index %d", keyPerson.getName(), keyPerson.getAge(), -(result + 1));
+        }
+
+        //List binary search
+        ArrayList<Person> personArrayList = new ArrayList<>();
+        personArrayList.add(p2);
+        personArrayList.add(p5);
+        personArrayList.add(p1);
+        personArrayList.add(p3);
+        personArrayList.add(p4);
+        keyPerson = new Person("Boris", 21);
+        result = 0;
+        result = MyCollections.binarySearch(personArrayList, keyPerson);
+        //System.out.println("\n" + result);
+        System.out.printf("\n\n9. Testing binary search in ArrayList.\nArrayList: [");
+        for (Person person : personArray) {
+            System.out.printf("%s age %d, ", person.getName(), person.getAge());
+        }
+        System.out.printf("]\n");
+        System.out.printf("Looking for: %s, %d\n", keyPerson.getName(), keyPerson.getAge());
+        if (result >= 0) {
+            System.out.printf("Person named %s with age %d was found at index %d", keyPerson.getName(), keyPerson.getAge(), result);
+        } else {
+            System.out.printf("Person named %s with age %d was not found. Could be insert at index %d", keyPerson.getName(), keyPerson.getAge(), -(result + 1));
+        }
+
+        //List binary search with comparator
+        keyPerson = new Person("Vova", 20);
+        result = MyCollections.binarySearch(personArrayList, keyPerson, new PersonComparator());
+        System.out.printf("\n\n10. Testing generic binary search in ArrayList with comparator.\nArray: [");
+        for (Person person : personArray) {
             System.out.printf("%s age %d, ", person.getName(), person.getAge());
         }
         System.out.printf("]\n");

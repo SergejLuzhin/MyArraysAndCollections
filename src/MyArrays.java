@@ -102,11 +102,11 @@ public class MyArrays {
         return -(low + 1);
     }
 
-    static int binarySearch(int[] a, int key){
+    static int binarySearch(int[] a, int key) {
         return binarySearch(a, 0, a.length, key);
     }
 
-    static int binarySearch(int[] a, int fromIndex, int toIndex, int key){
+    static int binarySearch(int[] a, int fromIndex, int toIndex, int key) {
         int low = fromIndex;
         int high = toIndex - 1;
 
@@ -124,11 +124,11 @@ public class MyArrays {
         return -(low + 1); //key not found
     }
 
-    static int binarySearch(long[] a, long key){
+    static int binarySearch(long[] a, long key) {
         return binarySearch(a, 0, a.length, key);
     }
 
-    static int binarySearch(long[] a, int fromIndex, int toIndex, long key){
+    static int binarySearch(long[] a, int fromIndex, int toIndex, long key) {
         int low = fromIndex;
         int high = toIndex - 1;
 
@@ -146,11 +146,11 @@ public class MyArrays {
         return -(low + 1); //key not found
     }
 
-    static int binarySearch(short[] a, short key){
+    static int binarySearch(short[] a, short key) {
         return binarySearch(a, 0, a.length, key);
     }
 
-    static int binarySearch(short[] a, int fromIndex, int toIndex, short key){
+    static int binarySearch(short[] a, int fromIndex, int toIndex, short key) {
         int low = fromIndex;
         int high = toIndex - 1;
 
@@ -168,11 +168,11 @@ public class MyArrays {
         return -(low + 1); //key not found
     }
 
-    static <T> int binarySearch(T[] a, T key, Comparator c){
+    static <T> int binarySearch(T[] a, T key, Comparator c) {
         return binarySearch(a, 0, a.length, key, c);
     }
 
-    static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator c){
+    static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator c) {
         int low = fromIndex;
         int high = toIndex - 1;
 
