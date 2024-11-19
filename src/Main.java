@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        // 1. Byte binary search
+        // Byte binary search
         byte[] a = new byte[]{2, 4, 5, 6, 8, 9, 10, 14, 15, 19, 20};
         byte key = 3;
         int result = MyArrays.binarySearch(a, key);
@@ -36,5 +36,37 @@ public class Main {
             System.out.printf("Element %.2f was not found. Could be insert at index %d", doubleKey, -(result + 1));
         }
 
+        //Float binary search
+        float[] floatArray = new float[]{2.3f, 3.54f, 4.31f, 4.46f, 5.465f, 8.42f};
+        float floatKey = 2.3f;
+        result = MyArrays.binarySearch(floatArray, floatKey);
+        System.out.println("\n\n4. Testing float binary search.\nArray: " + Arrays.toString(floatArray) + "\nLooking for: " + floatKey);
+        if (result >= 0) {
+            System.out.printf("Element %.2f was found at index %d", floatKey, result);
+        } else {
+            System.out.printf("Element %.2f was not found. Could be insert at index %d", floatKey, -(result + 1));
+        }
+
+        // Integer binary search
+        int[] integerArray = new int[]{3, 4, 5, 7, 8, 9, 13, 14, 15, 22, 28};
+        int integerKey = 7;
+        result = MyArrays.binarySearch(integerArray, integerKey);
+        System.out.println("\n\n5. Testing integer binary search.\nArray: " + Arrays.toString(integerArray) + "\nLooking for: " + integerKey);
+        if (result >= 0) {
+            System.out.printf("Element %d was found at index %d", integerKey, result);
+        } else {
+            System.out.printf("Element %d was not found. Could be insert at index %d", integerKey, -(result + 1));
+        }
+
+        // Long binary search
+        long[] longArray = new long[]{334, 453, 555, 713, 8343, 9134, 13111, 14434, 15134, 2211113, 28343413};
+        long longKey = 15134;
+        result = MyArrays.binarySearch(longArray, longKey);
+        System.out.println("\n\n6. Testing long binary search.\nArray: " + Arrays.toString(longArray) + "\nLooking for: " + longKey);
+        if (result >= 0) {
+            System.out.printf("Element %d was found at index %d", longKey, result);
+        } else {
+            System.out.printf("Element %d was not found. Could be insert at index %d", longKey, -(result + 1));
+        }
     }
 }
