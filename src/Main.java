@@ -79,5 +79,27 @@ public class Main {
         } else {
             System.out.printf("Element %d was not found. Could be insert at index %d", shortKey, -(result + 1));
         }
+
+        // Generic binary search
+        Person p1 = new Person("Sergej", 22);
+        Person p2 = new Person("Vova", 20);
+        Person p3 = new Person("Max", 26);
+        Person p4 = new Person("Jain", 27);
+        Person p5 = new Person("Boris", 21);
+        Person keyPerson = new Person("Sergej", 22);
+
+        Person[] personArray = new Person[]{p2, p5, p1, p3, p4};
+        result = MyArrays.binarySearch(personArray, keyPerson, new PersonComparator());
+        System.out.printf("\n\n8. Testing generic binary search.\nArray: [");
+        for (Person person : personArray){
+            System.out.printf("%s age %d, ", person.getName(), person.getAge());
+        }
+        System.out.printf("]\n");
+        System.out.printf("Looking for: %s, %d\n", keyPerson.getName(), keyPerson.getAge());
+        if (result >= 0) {
+            System.out.printf("Person named %s with age %d was found at index %d", keyPerson.getName(), keyPerson.getAge(), result);
+        } else {
+            System.out.printf("Person named %s with age %d was not found. Could be insert at index %d", keyPerson.getName(), keyPerson.getAge(), -(result + 1));
+        }
     }
 }

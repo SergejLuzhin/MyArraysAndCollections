@@ -1,3 +1,6 @@
+import java.util.Comparator;
+import java.util.List;
+
 public class MyArrays {
     static int binarySearch(byte[] a, byte key) {
         return binarySearch(a, 0, a.length, key);
@@ -163,6 +166,28 @@ public class MyArrays {
                 return mid; //key found
         }
         return -(low + 1); //key not found
+    }
+
+    static <T> int binarySearch(T[] a, T key, Comparator c){
+        return binarySearch(a, 0, a.length, key, c);
+    }
+
+    static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator c){
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            T midVal = a[mid];
+            int cmp = c.compare(midVal, key);
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
     }
 
 }
